@@ -80,4 +80,17 @@ class CoinListViewModel(application: Application) : AndroidViewModel(application
         super.onCleared()
         viewModelJob.cancel()
     }
+
+    /**
+     * Factory for constructing CoinListViewModel with parameter
+     */
+    class Factory(val app: Application) : ViewModelProvider.Factory {
+        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            if (modelClass.isAssignableFrom(CoinListViewModel::class.java)) {
+                @Suppress("UNCHECKED_CAST")
+                return CoinListViewModel(app) as T
+            }
+            throw IllegalArgumentException("Unable to construct viewmodel")
+        }
+    }
 }

@@ -42,6 +42,7 @@ class CoinTrackerApplication: Application() {
             .setConstraints(constraints)
             .build()
 
+        Timber.d("WorkManager: Periodic Work request for sync is scheduled")
         WorkManager.getInstance().enqueueUniquePeriodicWork(
             RefreshDataWorker.WORK_NAME,
             ExistingPeriodicWorkPolicy.KEEP,
