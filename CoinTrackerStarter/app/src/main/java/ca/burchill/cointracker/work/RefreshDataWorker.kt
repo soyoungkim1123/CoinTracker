@@ -11,7 +11,7 @@ class RefreshDataWorker (appContext: Context, params: WorkerParameters) :
     CoroutineWorker(appContext, params) {
     // TODO - implement delayedInit() that ensures workmanager is refreshing the database regularly
     companion object {
-        const val WORK_NAME = "ca.burchill.cointracker.work.CoinTrackerApplication"
+        const val WORK_NAME = "ca.burchill.cointracker.work.RefreshDataWorker"
     }
     override suspend fun doWork(): Result {
         val database = getDatabase(applicationContext)
