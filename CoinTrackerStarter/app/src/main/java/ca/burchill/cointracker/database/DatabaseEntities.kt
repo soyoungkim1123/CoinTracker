@@ -3,6 +3,7 @@ package ca.burchill.cointracker.database
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import ca.burchill.cointracker.domain.Coin
+import ca.burchill.cointracker.network.NetworkCoin
 
 
 /**
